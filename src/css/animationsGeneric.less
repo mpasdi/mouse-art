@@ -1,0 +1,67 @@
+@keyframes shape_expand {
+  from {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  to {
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes shape_move_right {
+  0% {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    opacity: 00;
+    width: 0;
+    height: 0;
+    transform: translate(100px, 0px);
+  }
+}
+
+@keyframes shape_move_bottom {
+  0% {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    opacity: 00;
+    width: 0;
+    height: 0;
+    transform: translate(0, 100px);
+  }
+}
+
+@keyframes shape_move_left {
+  0% {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transform: translate(-100px, 0px);
+  }
+}
+
+@keyframes shape_move_top {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    //width: 0;
+    //height: 0;
+    transform: translate(0px, -100px);
+  }
+}
+

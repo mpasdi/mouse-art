@@ -1,0 +1,72 @@
+// 不同的形状
+
+@blue: blue;
+
+
+//.animate-base {
+//  position: fixed;
+//}
+
+//基础形状 ---------
+
+//方形
+.square(@color) {
+  //&:extend(.animate-base); // 耦合性过高
+
+  width: 10px;
+  height: 10px;
+  //border: 1px solid @color;
+  border: 4px solid @primary;
+
+}
+
+//圆形
+.circle(@color) {
+  .square(@color);
+  border-radius: 50%;
+}
+
+//扩展图形 ----------
+
+//空心正方形
+.square-hollow {
+  .square(@blue);
+}
+
+//实心正方形
+.square-solid {
+  .square(@blue);
+  background-color: @blue;
+}
+
+//空心圆
+.circle-hollow {
+  .circle(@blue);
+}
+
+// 实心圆
+.circle-solid {
+  .circle(@blue);
+  background-color: @blue;
+}
+
+// 菱形
+//空心菱形
+.diamond-hollow {
+  .square(@blue);
+  transform: rotateZ(45deg);
+}
+
+//实心菱形
+.diamond-solid {
+  .square(@blue);
+  background-color: @blue;
+  transform: rotateZ(45deg);
+}
+
+//test
+.border {
+  border: 10px solid @primary;
+  background-color: skyblue;
+}
+
