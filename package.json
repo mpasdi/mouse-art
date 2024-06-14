@@ -4,6 +4,7 @@
   "author": {
     "name": "mpsdi"
   },
+  "license": "MIT",
   "files": [
     "dist"
   ],

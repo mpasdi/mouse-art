@@ -11,9 +11,18 @@ npm install mouse-art
 
 ### 2. 使用
 ```markdown
+import 'mouse-art/dist/index.css'
 import mouseArt from 'mouse-art'
 
-mouseArt(ele)
+mouseArt({
+  effectType: 'love_rise'
+})
+
+effectType: 代表类型。目前可选类型如下
+- text_hidden
+- love_rise
+- circle_enlarge
+- circle_cross_explosive
 ```
 
 ### 3. 简介
