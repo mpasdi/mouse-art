@@ -1,6 +1,6 @@
 {
   "name": "mouse-art",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "mpsdi"
   },
@@ -11,10 +11,12 @@
   "module": "./dist/index.mjs",
   "types": "./index.d.ts",
   "exports": {
-    "types": "./index.d.ts",
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.umd.js",
-    "style": "./dist/index.css"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "keywords": [
     "mouse",
