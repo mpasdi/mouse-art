@@ -2,6 +2,8 @@ import { drawMouseWrapEle, drawMouseInnerEle } from "../utils/drawEle.ts";
 import { specificDirectMove } from "@/dynamicAnimations";
 import { generateRandomColor } from "@/utils/color.ts";
 import { updateRootStyleVariable } from "@/config/cssConfig.ts";
+import { phrases } from "@/utils/constant.ts";
+import { getArtOption } from "@/redux/getSet.ts";
 
 /**
  *  圆扩增
@@ -65,10 +67,14 @@ function circle_rotate_yin_yang() {
 
 function text_hidden() {
   const circleWrap = drawMouseWrapEle();
+  const { text } = getArtOption();
+
+  const color = generateRandomColor();
   const innerEle = drawMouseInnerEle(
-    ["animate__animated", "animate__zoomOutDown"], //  animate__zoomOutUp
-    "chinese red",
+    ["text_hidden", "animate__animated", "animate__zoomOutDown"], //  animate__zoomOutUp
+    text || phrases[Math.floor(Math.random() * phrases.length)],
   );
+  innerEle.setAttribute("style", `color: ${color}`);
 
   circleWrap.appendChild(innerEle);
   return circleWrap;

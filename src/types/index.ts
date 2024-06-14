@@ -4,6 +4,7 @@ interface MouseArtOptionsType {
   duration?: number; // 动画持续时间
   bindEle?: HTMLElement;
   bgImg?: string; // 传递该值 自动设置背景图
+  text?: string; //  text_hidden 特效， 该属性才有意义。
 }
 
 export type { MouseArtOptionsType };
