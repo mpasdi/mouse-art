@@ -1,10 +1,20 @@
 {
   "name": "mouse-art",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "mpsdi"
   },
-  "main": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.umd.js"
+  },
   "keywords": [
     "mouse",
     "effect"
@@ -22,8 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@types/less": "^3.0.6",
     "@eslint/js": "^9.2.0",
+    "@types/less": "^3.0.6",
     "@types/node": "^20.12.11",
     "@types/uuid": "^9.0.8",
     "cz-git": "^1.9.1",
