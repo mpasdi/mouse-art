@@ -26,6 +26,7 @@
   "description": "mouse click effects",
   "scripts": {
     "dev": "vite",
+    "serve": "npm run dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write src/",
