@@ -1,26 +1,29 @@
-import store, { mouseSlice } from "@/redux/index.ts";
-import type { MouseArtOptionsType } from "@/types";
+import type { MouseArtOptionsType } from '@/types'
 
-const { updateMouseCoordinate, updateArtOption } = mouseSlice.actions;
+const state: {
+  mouseCoordinate: { x: number; y: number }
+  artOption: MouseArtOptionsType
+} = {
+  mouseCoordinate: { x: 0, y: 0 },
+  artOption: {}
+}
 
 // mouse Coordinate
 function getMouseCoordinate() {
-  const state = store.getState();
-  return state.mouse.mouseCoordinate;
+  return state.mouseCoordinate
 }
 
 function setMouseCoordinate(x: number, y: number) {
-  store.dispatch(updateMouseCoordinate([x, y]));
+  state.mouseCoordinate = { x, y }
 }
 
 // mouse art options
 function getArtOption() {
-  const state = store.getState();
-  return state.mouse.artOption;
+  return state.artOption
 }
 
 function setArtOption(artOption: MouseArtOptionsType) {
-  store.dispatch(updateArtOption(artOption));
+  state.artOption = artOption
 }
 
-export { getMouseCoordinate, setMouseCoordinate, getArtOption, setArtOption };
+export { getMouseCoordinate, setMouseCoordinate, getArtOption, setArtOption }

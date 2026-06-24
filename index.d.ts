@@ -7,16 +7,19 @@ type MouseArtEffectType =
   | 'text_hidden'
 
 interface MouseArtOptionsType {
-  eventType?: 'mousedown' | 'mouseover' // 事件类型，鼠标点击 | 鼠标移动
-  effectType?: MouseArtEffectType | null // 动画类型
-  duration?: number // 动画持续时间
+  eventType?: 'mousedown' | 'mouseover'
+  effectType?: MouseArtEffectType | null
+  duration?: number
   bindEle?: Document | HTMLElement
-  bgImg?: string // 传递该值 自动设置背景图
-  text?: string // text_hidden 特效， 该属性才有意义。
+  bgImg?: string
+  text?: string
 }
 
 interface MouseArtController {
   destroy: () => void
 }
 
+declare function mouseArt(options?: MouseArtOptionsType): MouseArtController
+
+export default mouseArt
 export type { MouseArtEffectType, MouseArtOptionsType, MouseArtController }

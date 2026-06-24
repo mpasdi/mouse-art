@@ -1,12 +1,13 @@
 {
   "name": "mouse-art",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "author": {
     "name": "mpsdi"
   },
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -27,7 +28,7 @@
   "scripts": {
     "dev": "vite",
     "serve": "npm run dev",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && tsc -p tsconfig.types.json",
     "preview": "vite preview",
     "format": "prettier --write src/",
     "commit": "czg",
@@ -60,9 +61,7 @@
     }
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.5",
     "animate.css": "^4.1.1",
-    "redux": "^5.0.1",
     "uuid": "^9.0.1"
   },
   "repository": {

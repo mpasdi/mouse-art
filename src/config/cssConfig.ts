@@ -1,37 +1,37 @@
-import less from "less";
+import less from 'less'
 
 // const duration = "--duration";
 
 const themes = {
   light: {
-    textColor: "black",
-    primary: "purple",
+    textColor: 'black',
+    primary: 'purple'
   },
   dark: {
-    textColor: "white",
-    primary: "black",
-  },
-};
+    textColor: 'white',
+    primary: 'black'
+  }
+}
 
 // 返回预定义的不同less 变量
-function globalLessVariable(themeType: "light" | "dark" = "light") {
-  return Object.assign({}, themes[themeType]);
+function globalLessVariable(themeType: 'light' | 'dark' = 'light') {
+  return Object.assign({}, themes[themeType])
 }
 
 /**
  * less.modifyVars 修改less 变量，
  * 但是没有生效
  */
-function updateGlobalLessVariable(themeType: "light" | "dark" = "light") {
-  const globalVariable = globalLessVariable(themeType);
+function updateGlobalLessVariable(themeType: 'light' | 'dark' = 'light') {
+  const globalVariable = globalLessVariable(themeType)
   less
     .modifyVars(globalVariable)
     .then((res) => {
-      console.info("修改主题成功", res);
+      console.info('修改主题成功', res)
     })
     .catch((e) => {
-      console.error("修改主题失败", e);
-    });
+      console.error('修改主题失败', e)
+    })
 }
 
 /**
@@ -40,14 +40,10 @@ function updateGlobalLessVariable(themeType: "light" | "dark" = "light") {
  * @param value
  * @param ele
  */
-function updateRootStyleVariable(
-  key: string,
-  value: string,
-  ele = document.documentElement,
-) {
-  if (!ele) return;
-  ele.style.setProperty(key, value);
-  return ele;
+function updateRootStyleVariable(key: string, value: string, ele = document.documentElement) {
+  if (!ele) return
+  ele.style.setProperty(key, value)
+  return ele
 }
 
 /**
@@ -57,11 +53,11 @@ function updateRootStyleVariable(
  */
 function batchUpdateEleStyleVariable(
   styleObj: { [key: string]: string },
-  ele = document.documentElement,
+  ele = document.documentElement
 ) {
   for (const styleObjKey in styleObj) {
     if (Object.hasOwn(styleObj, styleObjKey)) {
-      updateRootStyleVariable(styleObjKey, styleObj[styleObjKey], ele);
+      updateRootStyleVariable(styleObjKey, styleObj[styleObjKey], ele)
     }
   }
 }
@@ -70,5 +66,5 @@ export {
   globalLessVariable,
   updateGlobalLessVariable,
   updateRootStyleVariable,
-  batchUpdateEleStyleVariable,
-};
+  batchUpdateEleStyleVariable
+}
